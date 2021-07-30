@@ -31,3 +31,12 @@ p{
     letter-spacing: 1px;
     color: rgb(0, 0, 0);
 }
+
+#headertext {
+    color: #5099dd;
+}
+
+.borderli {
+    border-style: dotted;
+    border-color: #8ac7ff;
+}
