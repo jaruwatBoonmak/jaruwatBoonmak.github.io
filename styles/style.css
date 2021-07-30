@@ -37,6 +37,6 @@ p{
 }
 
 .borderli {
-    border-style: dotted;
-    border-color: ;
+    border: 4px dotted red;
+    border-radius: 4px;
 }
