@@ -38,7 +38,7 @@
                     continue;
                 }
                 else{
-                    if (parseInt(number)>0) {
+                    if (parseInt(number)>0 && number%1==0) {
                         numberPrimeshow = showPrimes(parseInt(number));
                        alert(`For n = ${number} prime numbers are ${numberPrimeshow}`);
                        break;
