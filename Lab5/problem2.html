@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Problem1</title>
+        <style>
+            ol{
+                list-style-type: circle;
+            }
+            li{
+                font-size: 24px;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            let numBerA= new Array();
+            let fnumBerA= new Array();
+            var list =null;
+            var sum = 0;
+            var avg = 0;
+
+            function readInput(){
+                while (true) {
+                    let number = prompt("Enter an integer (a negative )");
+                    if(isNaN(number) || number==0 || number%1>0){
+                        continue;
+                    }
+                    else{
+                        fnumBerA.push(number);
+                        if(fnumBerA[0]<0){
+                            alert("For the list is empty, the average is 0, the minimum is 0, and the maximum is 0");
+                            break;
+                        }
+                        else{
+                            if(number<0){
+                                return numBerA;
+                                break;
+                            }
+                            numBerA.push(number);
+                        }
+                    }
+                }
+                
+            }
+            function arrayMin(arr) {
+                return arr.reduce(function (p, v) {
+                    return ( p < v ? p : v );
+                });
+            }
+
+            function arrayMax(arr) {
+                return arr.reduce(function (p, v) {
+                    return ( p > v ? p : v );
+                });
+            }
+
+            list = readInput();
+            
+            function displayStats(ar) {
+
+                for(let i=0 ; i<ar.length ; i++){
+                    sum = sum + parseInt(ar[i]);
+                }
+                avg = sum/ar.length;
+
+                var miniMum = arrayMin(ar);
+                var maxMum = arrayMax(ar);
+
+                alert(`For the list ${ar}, the average is ${avg}, the minimum is ${miniMum}, and the maximum is ${maxMum}`);
+            }
+            displayStats(list);
+
+        
+        </script>
+        <h2 style="text-align: center;">Statistics Calculator!</h2><br>
+        <h1>Write the web app to prompt accepting for positive integers until the user enters a negative integer</h1>
+        <br>
+        <ol>
+            
+            <li>If the entered text is not a positive integer number, then the web app will keep asking for a number until the valid positive integer is entered</li>
+            <li>If the entered text is a negative integer, then the web app will show the statistics (average, min, max) of all entered positive integers</li>
+            <li>If the user enters a negative integer as the first integer, the average, the min, and the max is 0</li>
+        </ol>
+          <br>
+          <h1>Hint: </h1>
+        <br>
+        <ol>
+            
+            <li>Implement these two functions <br>list = readInput(); <br>displayStats(list);</li>
+            <li>Use ternary operator (conditional operator ?) to handle in both cases which the list is empty and is not empty</li>
+          </ol>
+    </body>
+</html>
